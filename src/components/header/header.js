@@ -1,4 +1,8 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { Menu } from '../../menu'
+
+import {Switch,Route,BrowserRouter} from 'react-router-dom';
 
 export const Header = () => {
   return (
@@ -92,11 +96,26 @@ export const Header = () => {
                             <li><a href="index.html" className="active">Home</a></li>
                             <li className="dropdown"><a href="#">Shop<i className="fa fa-angle-down"></i></a>
                                 <ul role="menu" className="sub-menu">
-                                    <li><a href="shop.html">Products</a></li>
+                                    {/* {
+                                        Menu.map((menu,index)=>{
+                                            <React.Fragment>
+                                                <Link to={menu.path}>{menu.name}</Link>
+                                            </React.Fragment>
+                                        })
+                                    } */}
+
+
+                                <BrowserRouter>
+                                <Link to="/">Home</Link>
+                                <Link to="/products"></Link>
+                                </BrowserRouter>
+
+
+                                    {/* <li><Link to='/products' >Products</Link></li>
                                     <li><a href="product-details.html">Product Details</a></li> 
                                     <li><a href="checkout.html">Checkout</a></li> 
                                     <li><a href="cart.html">Cart</a></li> 
-                                    <li><a href="login.html">Login</a></li> 
+                                    <li><a href="login.html">Login</a></li>  */}
                                 </ul>
                             </li> 
                             <li className="dropdown"><a href="#">Blog<i className="fa fa-angle-down"></i></a>

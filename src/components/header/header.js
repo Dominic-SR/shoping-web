@@ -106,8 +106,8 @@ export const Header = () => {
 
 
                                 <BrowserRouter>
-                                <Link to="/">Home</Link>
-                                <Link to="/products"></Link>
+                                <li><Link to="/">Home</Link></li>
+                                <li><Link to="/products"> Prod</Link></li>
                                 </BrowserRouter>
 
 

@@ -4,17 +4,17 @@ const Products = lazy(()=>import("../src/pages/products/products"))
 
 export const Routes = [
 {
-    path: "/",
+    path:"/",
     component:Home,
     exact:true
 },
 {
-    path: "/home",
+    path:"/home",
     component:Home,
     exact:true
 },
 {
-    path: "/products",
+    path:"/products",
     component:Products,
     exact:true
 }

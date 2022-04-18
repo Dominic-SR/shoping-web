@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,NavLink } from 'react-router-dom'
 import { Menu } from '../../menu'
 
 import {Switch,Route,BrowserRouter} from 'react-router-dom';
@@ -71,7 +71,7 @@ export const Header = () => {
                             <li><a href="#"><i className="fa fa-star"></i> Wishlist</a></li>
                             <li><a href="checkout.html"><i className="fa fa-crosshairs"></i> Checkout</a></li>
                             <li><a href="cart.html"><i className="fa fa-shopping-cart"></i> Cart</a></li>
-                            <li><a href="login.html"><i className="fa fa-lock"></i> Login</a></li>
+                            <li><a href="/auth"><i className="fa fa-lock"></i> Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -93,23 +93,19 @@ export const Header = () => {
                     </div>
                     <div className="mainmenu pull-left">
                         <ul className="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" className="active">Home</a></li>
+                            <li><a href="/" className="active">Home</a></li>
                             <li className="dropdown"><a href="#">Shop<i className="fa fa-angle-down"></i></a>
                                 <ul role="menu" className="sub-menu">
+                                <li><a href="product-details.html">Category</a></li> 
+                                    <li><a href="checkout.html">Brand</a></li>
                                     {/* {
                                         Menu.map((menu,index)=>{
-                                            <React.Fragment>
-                                                <Link to={menu.path}>{menu.name}</Link>
-                                            </React.Fragment>
+                                        
+                                            
+                                            console.log("----------->",menu)
+                                            
                                         })
                                     } */}
-
-
-                                <BrowserRouter>
-                                <li><Link to="/">Home</Link></li>
-                                <li><Link to="/products"> Prod</Link></li>
-                                </BrowserRouter>
-
 
                                     {/* <li><Link to='/products' >Products</Link></li>
                                     <li><a href="product-details.html">Product Details</a></li> 
@@ -118,14 +114,7 @@ export const Header = () => {
                                     <li><a href="login.html">Login</a></li>  */}
                                 </ul>
                             </li> 
-                            <li className="dropdown"><a href="#">Blog<i className="fa fa-angle-down"></i></a>
-                                <ul role="menu" className="sub-menu">
-                                    <li><a href="blog.html">Blog List</a></li>
-                                    <li><a href="blog-single.html">Blog Single</a></li>
-                                </ul>
-                            </li> 
-                            <li><a href="404.html">404</a></li>
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="/contact">Contact</a></li>
                         </ul>
                     </div>
                 </div>

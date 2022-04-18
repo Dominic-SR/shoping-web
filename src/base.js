@@ -1,33 +1,19 @@
-import React, { Suspense } from 'react'
+import React from 'react'
+import {Routes,Route,BrowserRouter,HashRouter, Switch} from 'react-router-dom'
 import { Home } from './pages/home/home';
-import {Routes,Route,BrowserRouter} from 'react-router-dom'
-import { Products } from './pages/products/products';
-import { Routes as Routes_path } from './routes';
+import { Products } from './pages/products/products'
+import { auth } from './pages/auth/auth'
 
-export const Base = () => {
+const Base = () => {
   return (
-    <>
-
-  <BrowserRouter>
-    <Suspense fallback={<div>Loading</div>}> 
-    <Routes>   
-    {
-      Routes_path.map((route,index)=>{
-        console.log(route.component)
-        console.log("<"+route.component+"/>")
-        return((
-          <Route
-          path={route.path}
-          key={index}
-          component={<route.component/>}
-          exact={route.exact}
-          />
-        ))
-      })
-    }
-    </Routes>
-    </Suspense>
-    </BrowserRouter>
-     </>
-  )
+    <BrowserRouter>
+      <Switch>
+        <Route exact path ="/" component={Home}></Route>
+        <Route path ="/products" component={Products}></Route>
+        <Route path="/auth" component={auth}></Route>
+      </Switch>
+      </BrowserRouter>
+  );
 }
+
+export { Base };
